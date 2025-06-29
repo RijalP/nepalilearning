@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Nepali Alphabets</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Learn Nepali Alphabets</h1>
+            <p>Click on any letter to hear its pronunciation and see an example word</p>
+        </header>
+
+        <div class="controls">
+            <button id="playAllVowels">Play All Vowels</button>
+            <button id="playAllConsonants">Play All Consonants</button>
+            <button id="downloadVowels">Download Vowels Practice Sheet</button>
+            <button id="downloadConsonants">Download Consonants Practice Sheet</button>
+        </div>
+
+        <div class="alphabet-section">
+            <h2>Nepali Vowels (स्वर)</h2>
+            <div class="alphabet-grid" id="vowels-grid"></div>
+            
+            <h2>Nepali Consonants (व्यञ्जन)</h2>
+            <div class="alphabet-grid" id="consonants-grid"></div>
+        </div>
+
+        <div class="example-container">
+            <h3 id="example-title">Click a letter to see example</h3>
+            <p id="example-word"></p>
+            <p id="example-meaning"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
