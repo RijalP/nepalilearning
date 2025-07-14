@@ -7,6 +7,8 @@ const nepaliAlphabets = {
         { letter: "ई", example: "ईश्वर", meaning: "God", audio: "ई.m4a" },
         { letter: "उ", example: "उकाली", meaning: "Uphill", audio: "उ.m4a" },
         { letter: "ऊ", example: "ऊन", meaning: "Wool", audio: "ऊ.m4a" },
+        { letter:"ऋ", example: "ऋतु", meaning: "Season", audio: "ऋ.m4a" },
+
         { letter: "ए", example: "एक", meaning: "One", audio: "ए.m4a" },
         { letter: "ऐ", example: "ऐनाखानी", meaning: "Mirror", audio: "ऐ.m4a" },
         { letter: "ओ", example: "ओखर", meaning: "Stone", audio: "ओ.m4a" },
