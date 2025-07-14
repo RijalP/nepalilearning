@@ -69,7 +69,7 @@ const playAllVowelsBtn = document.getElementById('playAllVowels');
 const playAllConsonantsBtn = document.getElementById('playAllConsonants');
 const downloadVowelsBtn = document.getElementById('downloadVowels');
 const downloadConsonantsBtn = document.getElementById('downloadConsonants');
-
+const resetPlayAllBtn = document.getElementById('resetPlayAll');
 // Initialize the alphabet buttons
 function initAlphabetButtons() {
     // Create vowel buttons
@@ -118,6 +118,7 @@ function initAlphabetButtons() {
 // Stop current audio if playing
 function stopCurrentAudio() {
     if (currentAudio) {
+    isPlayingAll = false;
         currentAudio.pause();
         currentAudio.currentTime = 0;
     }
@@ -152,14 +153,15 @@ function highlightLetter(button) {
 
 // Play all letters in sequence
 async function playAllLetters(letters) {
-    if (isPlayingAll) return;
+stopCurrentAudio();
+   // if (isPlayingAll) return;
     
     isPlayingAll = true;
     const buttons = Array.from(document.querySelectorAll('.letter-btn'));
     
     // Disable play all buttons during playback
-    playAllVowelsBtn.disabled = true;
-    playAllConsonantsBtn.disabled = true;
+   // playAllVowelsBtn.disabled = true;
+   // playAllConsonantsBtn.disabled = true;
     
     for (const letter of letters) {
         const button = buttons.find(btn => btn.dataset.letter === letter.letter);
@@ -185,8 +187,8 @@ async function playAllLetters(letters) {
     }
     
     // Re-enable play all buttons
-    playAllVowelsBtn.disabled = false;
-    playAllConsonantsBtn.disabled = false;
+   // playAllVowelsBtn.disabled = false;
+  //  playAllConsonantsBtn.disabled = false;
     isPlayingAll = false;
 }
 
@@ -223,7 +225,7 @@ function generatePracticePDF(type) {
         // Create practice sheets
         letters.forEach((letter, index) => {
             // Check if we need a new page (allow 40mm at bottom)
-            if (yPos > doc.internal.pageSize.getHeight() - 10) {
+            if (yPos > doc.internal.pageSize.getHeight() - 30) {
                 doc.addPage();
                 yPos = margin;
             }
@@ -307,6 +309,9 @@ playAllConsonantsBtn.addEventListener('click', () => playAllLetters(nepaliAlphab
 downloadVowelsBtn.addEventListener('click', () => {
     if (checkPDFLibrary()) generatePracticePDF('vowels');
 });
+// Event listeners
+resetPlayAllBtn.addEventListener('click', () => stopCurrentAudio() );
+
 downloadConsonantsBtn.addEventListener('click', () => {
     if (checkPDFLibrary()) generatePracticePDF('consonants');
 });
