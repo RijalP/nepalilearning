@@ -428,6 +428,10 @@ header h1 {
 #start-game:hover {
     background-color: #27ae60;
 }
+footer {
+  text-align: center;
+}
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
