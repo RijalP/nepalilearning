@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,85 @@ body {
     line-height: 1.6;
 }
 
+/* Navigation Styles */
+.main-nav {
+    background-color: #2c3e50;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #f1c40f;
+}
+
+.nav-menu a.active {
+    color: #f1c40f;
+    font-weight: bold;
+}
+
+.donate-btn {
+    background-color: #003087;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.donate-btn-pg{
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.donate-btn:hover {
+    background-color: #002366;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Container Styles */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -27,6 +107,7 @@ header h1 {
     margin-bottom: 10px;
 }
 
+/* Controls Styles */
 .controls {
     display: flex;
     justify-content: center;
@@ -43,13 +124,22 @@ header h1 {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .controls button:hover {
     background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
+.controls button i {
+    font-size: 14px;
+}
+
+/* Alphabet Section Styles */
 .alphabet-section {
     background-color: white;
     padding: 20px;
@@ -65,26 +155,29 @@ header h1 {
 }
 
 .alphabet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+   display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     margin-bottom: 30px;
 }
 
 .letter-btn {
     width: 100%;
-    height: 80px;
-    font-size: 36px;
+    padding: 15px 10px;
     background-color: #f1c40f;
     color: #2c3e50;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
+    text-align: center;
+    min-height: 100px; /* Ensure consistent height */
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
+
 
 .letter-btn:hover {
     background-color: #f39c12;
@@ -94,42 +187,286 @@ header h1 {
 .letter-btn.highlight {
     background-color: #e74c3c;
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 0 15px rgba(231, 76, 60, 0.7);
 }
 
-.example-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-#example-title {
-    color: #3498db;
+.letter-main {
+    font-size: 36px;
     margin-bottom: 10px;
+    line-height: 1;
+
 }
 
-#example-word {
-    font-size: 24px;
-    font-weight: bold;
+.examples-container {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 10px;
+    min-height: 100px;
+}
+
+.example-word {
     margin-bottom: 5px;
+    line-height: 1.4;
 }
 
-#example-meaning {
+.highlighted-letter {
+    color: #e74c3c;
+    font-weight: bold;
+    display: inline;
+}
+
+.example-meaning {
     color: #7f8c8d;
     font-style: italic;
 }
 
+/* Game Section Styles (for game.html) */
+.game-section {
+    margin-bottom: 50px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.matching-game-container {
+  position: relative;
+    margin: 30px 0;
+    min-height: 400px;
+}
+
+.matching-game {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin-bottom: 30px;
+}
+
+.letters-container, .pronunciations-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 180px;
+}
+
+.game-letter-btn, .game-pronunciation-btn {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.game-letter-btn {
+    background-color: #f39c12;
+    color: white;
+}
+
+.game-pronunciation-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.game-pronunciation-btn i {
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+.game-letter-btn:hover, .game-pronunciation-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.game-letter-btn.selected {
+    background-color: #e67e22;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.game-pronunciation-btn.active-pronunciation {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.game-letter-btn.matched, .game-pronunciation-btn.matched {
+    background-color: #27ae60;
+    cursor: default;
+}
+
+.game-letter-btn.incorrect, .game-pronunciation-btn.incorrect {
+    background-color: #e74c3c;
+}
+
+.connecting-line {
+    position: absolute;
+    height: 2px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.connecting-line.correct {
+    background-color: #27ae60;
+    border-top: 1px dashed #27ae60;
+}
+
+.connecting-line.incorrect {
+    background-color: #e74c3c;
+    border-top: 1px dashed #e74c3c;
+}
+
+.arrowhead {
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid;
+}
+
+.connecting-line.correct .arrowhead {
+    border-top-color: #27ae60;
+}
+
+.connecting-line.incorrect .arrowhead {
+    border-top-color: #e74c3c;
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.reset-button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto 0;
+    transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+    background-color: #c0392b;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.modal-content ol {
+    text-align: left;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.modal-content li {
+    margin-bottom: 10px;
+}
+
+.demo-letter {
+    background: #f39c12;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.demo-pronunciation {
+    background: #3498db;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+#start-game {
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#start-game:hover {
+    background-color: #27ae60;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .alphabet-grid {
-        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #2c3e50;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
     }
     
-    .letter-btn {
-        height: 60px;
-        font-size: 28px;
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .alphabet-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    
+    .matching-game {
+        gap: 80px;
+    }
+    
+    .letters-container, .pronunciations-container {
+        width: 140px;
+    }
+    
+    .game-letter-btn, .game-pronunciation-btn {
+        height: 50px;
+        font-size: 16px;
+        padding: 10px;
     }
     
     .controls {
@@ -139,5 +476,65 @@ header h1 {
     
     .controls button {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .alphabet-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .letter-main {
+        font-size: 28px;
+    }
+    
+    .examples-container {
+        font-size: 12px;
+    }
+    
+    .matching-game {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .letters-container, .pronunciations-container {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .game-letter-btn, .game-pronunciation-btn {
+        flex: 1 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        height: 45px;
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .game-pronunciation-btn i {
+        font-size: 14px;
+    }
+    
+    .connecting-line {
+        display: none;
+    }
+   
+}
+@media (max-width: 768px) {
+    .letter-btn {
+        min-height: 80px;
+    }
+    .letter-main {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .letter-btn {
+        min-height: 70px;
+    }
+    .letter-main {
+        font-size: 24px;
     }
 }

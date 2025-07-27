@@ -5,21 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Nepali Alphabets</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <h1 class="logo">नेपाली सिक्नुहोस्</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="lessons.html"><i class="fas fa-book"></i> Lessons</a></li>
+                <li><a href="games.html"><i class="fas fa-gamepad"></i> Games</a></li>
+                <li><a href="resources.html"><i class="fas fa-file-pdf"></i> Resources</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="https://www.paypal.me/prijal2009" target="_blank" class="donate-btn"><i class="fab fa-paypal"></i> Support Us</a></li>
+            </ul>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
     <div class="container">
         <header>
             <h1>Learn Nepali Alphabets</h1>
-            <p>Click on any letter to hear its pronunciation and see an example word</p>
+            <p>Click on any letter to hear its pronunciation and see example words</p>
         </header>
 
         <div class="controls">
-            <button id="playAllVowels">Play All Vowels</button>
-            <button id="playAllConsonants">Play All Consonants</button>
-            <button id="downloadVowels">Download Vowels Practice Sheet</button>
-            <button id="downloadConsonants">Download Consonants Practice Sheet</button>
-             <button id="resetPlayAll">Reset/Stop Sound</button>
+            <button id="playAllVowels"><i class="fas fa-play"></i> Play All Vowels</button>
+            <button id="playAllConsonants"><i class="fas fa-play"></i> Play All Consonants</button>
+            <button id="downloadVowels"><i class="fas fa-download"></i> Vowels Sheet</button>
+            <button id="downloadConsonants"><i class="fas fa-download"></i> Consonants Sheet</button>
+            <button id="resetPlayAll"><i class="fas fa-stop"></i> Stop Sound</button>
+            <button id="resetExamples"><i class="fas fa-undo"></i> Reset Examples</button>
         </div>
 
         <div class="alphabet-section">
@@ -29,14 +47,16 @@
             <h2>Nepali Consonants (व्यञ्जन)</h2>
             <div class="alphabet-grid" id="consonants-grid"></div>
         </div>
-
-        <div class="example-container">
-            <h3 id="example-title">Click a letter to see example</h3>
-            <p id="example-word"></p>
-            <p id="example-meaning"></p>
-        </div>
     </div>
+    <footer>
+        <p>&copy; 2025 bigyan.net  All rights reserved.</p>
+        <p>Created with ❤️ by PRijal</p>
+        <p><strong><mark>"कृपया हामीलाई सहयोग गर्नुहोस्। तपाईंको सानो सहयोगले प्रयासलाई अझ बढी प्रेरणा दिनेछ। नमस्कार ।" </mark> </strong></p>
+             <li><a href="https://www.paypal.me/prijal2009" target="_blank" class="donate-btn-pg"><i class="fab fa-paypal"></i> Support Us</a></li>
+             </footer> 
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
